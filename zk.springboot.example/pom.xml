@@ -22,6 +22,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <zk.version>8.5.0-Eval</zk.version>
+    <zk.springboot.version>0.0.2-SNAPSHOT</zk.springboot.version>
+    <commons-io.version>2.6</commons-io.version>
   </properties>
   <repositories>
     <repository>
@@ -43,14 +45,37 @@
     <dependency>
       <groupId>be.enyed</groupId>
       <artifactId>zk.springboot</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>${zk.springboot.version}</version>
     </dependency>
     <dependency>
       <groupId>org.zkoss.zk</groupId>
-      <artifactId>zkmax</artifactId>
+      <!--<artifactId>zkbind</artifactId>--> <!--ZK CE-->
+      <!--<artifactId>zkex</artifactId>-->   <!--ZK PE-->
+      <artifactId>zkmax</artifactId>         <!--ZK EE-->
+      <version>${zk.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-jdk14</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.zkoss.zk</groupId>
+      <artifactId>zuti</artifactId>          <!--ZK EE only-->
       <version>${zk.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.zkoss.zk</groupId>
+      <artifactId>zkplus</artifactId>
+      <version>${zk.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
+    </dependency>  
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
