@@ -1,0 +1,22 @@
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="native"
+    xsi:schemaLocation="
+      http://www.zkoss.org/2005/zul https://www.zkoss.org/2005/zul/zul.xsd">
+      
+	<div viewModel="@id('vm')  @init('be.enyed.zkboot.viewmodel.DataViewModel')"> 
+	  
+      <h:h1>Example messages</h:h1>
+      
+      <listbox model="@load(vm.data)" width="50%">
+        <listhead>
+          <listheader label="Message"/>
+        </listhead>
+        <template name="model" var="msg">
+          <listitem label="@load(msg)"/>
+        </template>
+      </listbox> 
+   
+	</div>
+	
+</zk>
