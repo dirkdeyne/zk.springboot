@@ -22,7 +22,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <zk.version>8.5.0-Eval</zk.version>
-    <zk.springboot.version>0.0.2-SNAPSHOT</zk.springboot.version>
+    <zk.springboot.version>0.0.1-SNAPSHOT</zk.springboot.version>
     <commons-io.version>2.6</commons-io.version>
   </properties>
   <repositories>
