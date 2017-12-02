@@ -37,4 +37,13 @@ public class ZkAutoConfiguration {
   public HttpSessionListener httpSessionListener() {
 	return new HttpSessionListener();
   }
+	
+  @Controller
+  public class ZulForwardController {
+	@RequestMapping(value = "/**/*.zul")
+	public String handleTestRequest(HttpServletRequest request) {
+	  String forward = "forward:" + zkProperties.getUpdateUri().replace("/*", "") + ClassWebResource.PATH_PREFIX + zkProperties.getZulPath() + request.getServletPath();
+	  return forward;
+	}
+  }
 }
