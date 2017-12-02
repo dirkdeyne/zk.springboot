@@ -1,0 +1,61 @@
+{"groups": [
+	{
+		"name": "zk",
+		"type": "be.enyed.zkboot.ZkAutoConfiguration"
+	}
+],"properties": [
+	{
+		"name": "zk.update-uri",
+		"type": "java.lang.String",
+		"defaultValue": "/zkau/*",
+		"description": "Update URL path to the DHtmlUpdateServlet, should start with a / and  end with a /*."
+	},
+	{
+		"name": "zk.zul-path",
+		"type": "java.lang.String",
+		"defaultValue": "/",
+		"description": "prefix to find zul page under /web/."
+	},
+	{
+		"name": "zk.richlet-uri",
+		"type": "java.lang.String",
+		"defaultValue": "/richlet/*"
+	},
+	{
+		"name": "zk.richlet-enabled",
+		"type": "java.lang.Boolean",
+		"defaultValue": "true",
+		"description": "Enable or Disable Richtlets."
+	},
+	{
+		"name": "zk.ee.comet",
+		"type": "java.lang.String",
+		"defaultValue": "org.zkoss.zkmax.ui.comet.async.installed",
+		"description": "Avoid duplicate installing of the CometAsyncServlet."
+	},
+	{
+		"name": "zk.ee.websockets-enabled",
+		"type": "java.lang.Boolean",
+		"defaultValue": "false",
+		"description": "When enabled, you should add a listener to your zk.xml."
+	}
+],"hints": [
+	{
+		"name": "zk.richlet-uri",
+		"values": [
+			{	
+				"value": "string",
+				"description": "should start with a / end with /*."
+			}
+		]
+	},
+	{
+		"name": "zk.ee.comet",
+		"values": [
+			{	
+				"value": "string",
+				"description": "use 'org.zkoss.zkmax.ws.filter.installed' when FR ZK-3799 is ready (8.5.1 ?)"
+			}
+		]
+	}
+]}
